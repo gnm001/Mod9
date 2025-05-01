@@ -1,0 +1,78 @@
+
+## 🎤 Final Presentation Script – Module 9 Task 1
+**Title:** Analysis of Flipkart Laptop Reviews  
+**Presenter:** Joseph Mario Maggi  
+**Duration:** 15 minutes  
+**Assignment Aim:** Identify a salient data point influencing product reviews and explain its impact theoretically and with data.
+
+---
+
+### 🕒 0:00–1:00 – Introduction
+- Welcome and assignment overview.
+- Dataset: 24,113 rows, 7 fields from Flipkart laptop listings.
+- Task: Find what drives a good or bad review — is it the review content, ratings, or product features?
+
+---
+
+### 🕒 1:00–3:00 – Initial Data Understanding
+- Dataset is mostly descriptive: product name, overall rating, number of ratings/reviews, and written reviews.
+- Observed that:
+  - 365 unique products.
+  - Many reviews contain generic terms like “Good” (e.g., repeated 753 times).
+  - High likelihood of review repetition across different products.
+
+---
+
+### 🕒 3:00–5:00 – Repetition Investigation
+- Checked for repeated reviews:
+  - Globally across all products.
+  - Within the same product.
+- Found high levels of repetition.
+- Conclusion: **Review text is inconclusive as a reliable factor.**
+
+---
+
+### 🕒 5:00–7:00 – Shift to Ratings Analysis
+- Compared:
+  - `overall_rating` shown on Flipkart.
+  - Actual `avg_user_rating` calculated from user-level ratings.
+- Created a **rating discrepancy metric**.
+- Found consistent inflation of `overall_rating` over user average.
+
+---
+
+### 🕒 7:00–9:00 – Visualization
+- Scatter plot shows ratings often lie above the “truth line” (y = x).
+- Histogram of discrepancies shows:
+  - Most products have small discrepancies.
+  - ~25 products lie beyond ±2σ — potential outliers.
+
+---
+
+### 🕒 9:00–11:00 – DSS Perspective
+- Discrepancy suggests algorithmic filtering or inflation by Flipkart.
+- In a Decision Support System (DSS), this introduces **bias**.
+- If discrepancies are unexplained, they weaken decision reliability and ethical fairness.
+
+---
+
+### 🕒 11:00–13:00 – Brand Analysis as Salient Insight
+- Extracted brand from product_name.
+- Grouped by brand: average, max, min ratings; total reviews.
+- Plotted box plots and bar charts:
+  - Apple and GIGABYTE: high and consistent.
+  - Ultimus, AXL, Avita: consistently lower.
+- Conclusion: **Brand is a strong, observable influencer on overall rating.**
+
+---
+
+### 🕒 13:00–15:00 – Final Summary and Recommendations
+- Review content = inconclusive.
+- Ratings = adjusted, not raw.
+- Discrepancy metric reveals systematic inflation.
+- **Salient data point:** *Brand has measurable impact on overall rating and perceived product quality.*
+- Recommendation:
+  - DSS models should incorporate **brand consistency** and **review volume** as decision factors.
+  - Platforms like Flipkart should disclose rating logic to support transparency.
+- Thank you and invite questions.
+
